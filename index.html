@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+    <link rel="stylesheet" href="./pages/index.css">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Borisov">
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <div class="header__logo"></div>
+        </header>
+        <main class="main">
+            <section class="profile">
+                <div class="profile__avatar"></div>
+                <div class="profile__info">
+                       <h2 class="profile__name">Жак-Ив Кусто</h2>
+                       <p class="profile__occupation">Исследователь океана</p>
+                       <button class="profile__edit-button" type="button"></button>
+                </div>
+                <button class="profile__add-button" type="button"></button>
+            </section>
+            <section class="elements">
+                <ul class="elements__cards">
+                    <li class="card">
+                        <img src="images/karachaevsk.jpg" alt="Карачаевск" class="card__image">
+                        <div class="card__caption">
+                            <h2 class="card__name">Карачаевск</h2>
+                            <button class="card__like-button" type="button"></button>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <img src="images/elbrus.jpg" alt="Гора Эльбрус" class="card__image">
+                        <div class="card__caption">
+                            <h2 class="card__name">Гора Эльбрус</h2>
+                            <button class="card__like-button" type="button"></button>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <img src="images/dombai.jpg" alt="Домбай" class="card__image">
+                        <div class="card__caption">
+                            <h2 class="card__name">Домбай</h2>
+                            <button class="card__like-button" type="button"></button>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <img src="images/godard.jpg" alt="Годар" class="card__image">
+                        <div class="card__caption">
+                            <h2 class="card__name">Годар</h2>
+                            <button class="card__like-button" type="button"></button>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <img src="images/gaidai.jpg" alt="Гайдай" class="card__image">
+                        <div class="card__caption">
+                            <h2 class="card__name">Гайдай</h2>
+                            <button class="card__like-button" type="button"></button>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <img src="images/karachaevsk.jpg" alt="Карачаево-Черкессия" class="card__image">
+                        <div class="card__caption">
+                            <h2 class="card__name">Карачаево-Черкессия</h2>
+                            <button class="card__like-button" type="button"></button>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__copyright">&#169; 2022 Mesto Russia</p>
+        </footer>
+        <div class="popup">
+            <div class="popup__container">
+                <button type="button" class="popup__close-button"></button>
+                <form name="edit-form" class="popup__form">
+                    <h2 class="popup__title">Редактировать профиль</h2>
+                    <input class="popup__input popup__input_name" name="inputUserName" type="text" placeholder="Имя" id="edit__name">
+                    <input class="popup__input popup__input_about" name="inputUserAbout" type="text" placeholder="О себе" id="edit__about">
+                    <button type="submit"  class="popup__save-button">Сохранить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>

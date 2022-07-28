@@ -22,8 +22,3 @@
    }
 }
 
-@media screen and (max-width: 320px) {
-   .profile {
-       padding: 0;
-   }
-}

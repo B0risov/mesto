@@ -6,12 +6,6 @@
          url(./Inter-Regular.woff) format('woff');
   }
   
-  @font-face {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    src: url(./Inter-Medium.ttf) format('ttf');
-  }
   
   @font-face {
     font-family: 'Inter';
@@ -19,4 +13,12 @@
     font-weight: 900;
     src: url(./Inter-Black.woff2) format('woff2'),
          url(./Inter-Black.woff) format('woff');
+  }
+  
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    src: url(./Inter-Medium.woff) format('woff'),
+         url(./Inter-Medium.woff2) format('woff2');
   }

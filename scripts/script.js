@@ -27,17 +27,17 @@ const initialCards = [
 
 const profileName = document.querySelector('.profile__name');
 const profileAbout = document.querySelector('.profile__occupation');
-const profilePopup = document.querySelector('.popup_profile');
-const personPopup = document.querySelector('.popup_new-person');
+const profilePopup = document.querySelector('.popup_type_profile-edit');
+const personPopup = document.querySelector('.popup_type_new-person');
 const popupFormEdit = profilePopup.querySelector('.popup__form');
-const popupAddPerson = document.querySelector('.popup__form');
+const popupAddPerson = personPopup.querySelector('.popup__form');
 
 const inputName = popupFormEdit.querySelector('.popup__input_type_name');
 const inputAbout = popupFormEdit.querySelector('.popup__input_type_about');
 
 const gridSection = document.querySelector('.elements');
 const gridElement = gridSection.querySelector('#cards').content;
-const imagePopup = document.querySelector('.popup-card');
+const imagePopup = document.querySelector('.popup_type_card');
 
 const personName = popupAddPerson.querySelector('.popup__input_type_person');
 const personLink = popupAddPerson.querySelector('.popup__input_type_image-link');
@@ -62,7 +62,7 @@ function closePopup(popup) {
 };
 
 
-function formSubmitHandler(evt) {
+function formSubmitProfile(evt) {
     evt.preventDefault();
     profileName.textContent = inputName.value;
     profileAbout.textContent = inputAbout.value;
@@ -85,12 +85,12 @@ function createCard(name, link) {
     });
 
     deleteButton.addEventListener('click', function(evt){
-       const cardDelete = evt.target.parentElement;
+       const cardDelete = evt.target.closest('.card');
        cardDelete.remove();
     });
 
     cardImage.addEventListener('click', function(evt) {
-        imagePopup.classList.toggle('popup_opened');
+        openPopup(imagePopup);
         imageBig.src = cardImage.src;
         imageBig.alt = cardCaption.textContent;
         imageDescription.textContent = cardCaption.textContent;
@@ -122,7 +122,7 @@ popupCloseButtonProfile.addEventListener('click', function(){
     closePopup(profilePopup);
 });
 
-popupFormEdit.addEventListener('submit', formSubmitHandler);
+popupFormEdit.addEventListener('submit', formSubmitProfile);
 
 profileAddButton.addEventListener('click', function(){
     openPopup(personPopup);

@@ -42,8 +42,8 @@ const imagePopup = document.querySelector('.popup_type_card');
 const personName = popupAddPerson.querySelector('.popup__input_type_person');
 const personLink = popupAddPerson.querySelector('.popup__input_type_image-link');
 
-const imageBig = imagePopup.querySelector('.popup-card__image');
-const imageDescription = imagePopup.querySelector('.popup-card__description');
+const imageBig = imagePopup.querySelector('.popup__image');
+const imageDescription = imagePopup.querySelector('.popup__description');
 
 const profileEditButton = document.querySelector('.profile__edit-button');
 const profileAddButton = document.querySelector('.profile__add-button');

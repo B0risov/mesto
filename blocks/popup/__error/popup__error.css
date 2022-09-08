@@ -5,8 +5,10 @@
     font-size: 12px;
     line-height: 15px;
     margin-bottom: 10px;
+    display: block;
+    min-height: 30px;
 }
 
 .popup__error:last-of-type {
-    margin-bottom: 30px;
+    margin-bottom: 8px;
 }

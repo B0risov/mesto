@@ -74,7 +74,7 @@ function addEventOpenImageListener(card, title, link) {
     });
 }
 
-function addEventDeleteCardListener(card) {
+function addDeleteCardEventListener(card) {
     const deleteButton = card.querySelector('.grid-card__delete');
     deleteButton.addEventListener('click', () => {
         const cardItem = deleteButton.closest('.grid-card');
@@ -93,7 +93,7 @@ function renderCard(card) {
 }
 
 function createCard(title, link) {
-    const card = cardTemplate.querySelector('.grid-card').cloneNode(true);
+    const card = cardTemplate.cloneNode(true);
     const gridCardTitle = card.querySelector('.grid-card__title');
     const gridCardImage = card.querySelector('.grid-card__image');
 
@@ -101,7 +101,7 @@ function createCard(title, link) {
     gridCardImage.src = link;
     gridCardImage.alt = title;
 
-    addEventDeleteCardListener(card);
+    addDeleteCardEventListener(card);
     addLikeActiveListener(card);
     addEventOpenImageListener(card, title, link);
 
@@ -153,7 +153,13 @@ popupCard.addEventListener('submit', (evt) => {
 
 addButton.addEventListener('click', () => openPopup(popupCard));
 
+const validationConfig = {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__user',
+    submitButtonSelector: '.popup__submit',
+    inactiveButtonClass: 'popup__button_disabled',
+    inputErrorClass: 'popup__input_type_error',
+    errorClass: 'popup__error_visible'
+  };
 
-
-
-    
+  enableValidation(validationConfig);

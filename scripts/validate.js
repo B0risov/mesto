@@ -1,15 +1,5 @@
-const validationConfig = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__user',
-  submitButtonSelector: '.popup__submit',
-  inactiveButtonClass: 'popup__button_disabled',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__error_visible'
-};
-
-
 const enableValidation = (configValidate) => {
-  const formList = document.querySelectorAll(configValidate.formSelector);
+  formList = document.querySelectorAll(configValidate.formSelector);
   formList.forEach((formElement) => {
       setEventListeners(configValidate, formElement);
   });
@@ -58,7 +48,7 @@ const toggleButtonState = (configValidate, formElement) => {
   }
 };
 
-const deletePopupError = (configValidate, popup) => {
+const deletePopupErrors = (configValidate, popup) => {
   const inputList = popup.querySelectorAll(configValidate.inputSelector);
   const formElement = popup.querySelector(configValidate.formSelector);
   inputList.forEach((inputElement) => {
@@ -67,4 +57,4 @@ const deletePopupError = (configValidate, popup) => {
   });
 };
 
-enableValidation(validationConfig);
+

@@ -6,12 +6,12 @@
     outline: none;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
-    margin-bottom: 30px;
     padding: 0 0 9px;
+    margin-bottom: 10px;
 }
 
 .popup__user:last-of-type {
-    margin-bottom: 48px;
+    margin-bottom: 10px;
 }
 
 .popup__user:focus {

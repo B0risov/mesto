@@ -39,14 +39,22 @@ const setEventListeners = (configValidate, formElement) => {
 
 const toggleButtonState = (configValidate, formElement) => {
   const buttonSubmit = formElement.querySelector(configValidate.submitButtonSelector);
+  function disableButton() {
+    buttonSubmit.classList.add(configValidate.inactiveButtonClass);
+    buttonSubmit.disabled = true;
+};
+
+  function enableButton() {
+    buttonSubmit.classList.remove(configValidate.inactiveButtonClass);
+    buttonSubmit.disabled = false;
+};
   if (!formElement.checkValidity()) {
-      buttonSubmit.classList.add(configValidate.inactiveButtonClass);
-      buttonSubmit.disabled = true;
+    disableButton();
   } else {
-      buttonSubmit.classList.remove(configValidate.inactiveButtonClass);
-      buttonSubmit.disabled = false;
+    enableButton();
   }
 };
+
 
 const deletePopupErrors = (configValidate, popup) => {
   const inputList = popup.querySelectorAll(configValidate.inputSelector);

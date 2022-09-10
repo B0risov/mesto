@@ -112,7 +112,7 @@ function openPopup(popup) {
     popup.classList.add('popup_opened');
     document.addEventListener("keydown", escClosePopup);
     popup.addEventListener('click', closePopupByClickOnOverLayOrButton);
-    deletePopupError(validationConfig, popup);
+    deletePopupErrors(validationConfig, popup);
 }
 
 function escClosePopup(evt) {
@@ -139,7 +139,7 @@ editButton.addEventListener('click', () => {
     nameInputProfile.value = userName.textContent;
     jobInputProfile.value = userAbout.textContent;
 
-    deletePopupError(validationConfig, popupProfile);
+    deletePopupErrors(validationConfig, popupProfile);
 });
 
 popupCard.addEventListener('submit', (evt) => {

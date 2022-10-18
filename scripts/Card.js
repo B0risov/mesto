@@ -1,13 +1,13 @@
 export default class Card {
-    constructor(data, template, handleCardClick) {
+    constructor(data, templateSelector, handleCardClick) {
         this._title = data.name;
         this._link = data.link;
-        this._template = template;
+        this._templateSelector = templateSelector;
         this._handleCardClick = handleCardClick;
     }
 
     _getTemplate() {
-        const cardElement = this._template.content.querySelector('.grid-card').cloneNode(true);
+        const cardElement = this._templateSelector.content.querySelector('.grid-card').cloneNode(true);
         this._gridCardTitle = cardElement.querySelector('.grid-card__title');
         this._gridCardImage = cardElement.querySelector('.grid-card__image');
 
@@ -33,19 +33,17 @@ export default class Card {
     }
 
     _addEventDeleteCardListener() {
-        this._deleteButton.addEventListener('click', () => this._deleteButton.closest('.grid-card').remove());
+        this._element.remove();
+        
     }
 
     _addLikeActiveListener() {
-        this._likeButton.addEventListener('click', function (evt) {
-            evt.target.classList.toggle('grid-card__like_active');
-        });
+        this._likeButton.classList.toggle('grid-card__like_active');
     }
 
    _setEventListeners() {
-        this._addEventDeleteCardListener();
-        this._addLikeActiveListener();
+        this._deleteButton.addEventListener('click', () => this._addEventDeleteCardListener());
+        this._likeButton.addEventListener('click', () => this._addLikeActiveListener());
         this._gridCardImage.addEventListener('click', () => this._handleCardClick(this._title, this._link));
     }
 }
-

@@ -15,5 +15,5 @@
 }
 
 .popup__user:focus {
-    box-shadow: 0 0 15px 5px #6690f0;
+    box-shadow: none;
 }

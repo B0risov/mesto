@@ -150,3 +150,5 @@ addButton.addEventListener('click', () => {
     formValidators['popup-form-card'].resetValidation();
     openPopup(popupCard);
 });
+
+export {handleCardClick};

@@ -1,5 +1,6 @@
+import {handleCardClick} from './index.js'
 export default class Card {
-    constructor(data, templateSelector, handleCardClick) {
+    constructor(data, templateSelector) {
         this._title = data.name;
         this._link = data.link;
         this._templateSelector = templateSelector;
@@ -32,18 +33,18 @@ export default class Card {
         return this._element;
     }
 
-    _addEventDeleteCardListener() {
+    _handleDeleteCard() {
         this._element.remove();
         
     }
 
-    _addLikeActiveListener() {
+    _handeCardLike() {
         this._likeButton.classList.toggle('grid-card__like_active');
     }
 
    _setEventListeners() {
-        this._deleteButton.addEventListener('click', () => this._addEventDeleteCardListener());
-        this._likeButton.addEventListener('click', () => this._addLikeActiveListener());
+        this._deleteButton.addEventListener('click', () => this._handleDeleteCard());
+        this._likeButton.addEventListener('click', () => this._handeCardLike());
         this._gridCardImage.addEventListener('click', () => this._handleCardClick(this._title, this._link));
     }
 }

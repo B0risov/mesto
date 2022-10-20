@@ -92,7 +92,6 @@ function handleCardClick(name, link) {
 
 function createCard(item) {
     const card = new Card(item, cardTemplate, handleCardClick);
-
     return card.createCard();
 }
 
@@ -150,5 +149,3 @@ addButton.addEventListener('click', () => {
     formValidators['popup-form-card'].resetValidation();
     openPopup(popupCard);
 });
-
-export {handleCardClick};

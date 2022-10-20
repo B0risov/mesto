@@ -1,14 +1,13 @@
-import {handleCardClick} from './index.js'
 export default class Card {
-    constructor(data, templateSelector) {
+    constructor(data, cardTemplate, handleCardClick) {
         this._title = data.name;
         this._link = data.link;
-        this._templateSelector = templateSelector;
+        this._cardTemplate = cardTemplate;
         this._handleCardClick = handleCardClick;
     }
 
     _getTemplate() {
-        const cardElement = this._templateSelector.content.querySelector('.grid-card').cloneNode(true);
+        const cardElement = this._cardTemplate.content.querySelector('.grid-card').cloneNode(true);
         this._gridCardTitle = cardElement.querySelector('.grid-card__title');
         this._gridCardImage = cardElement.querySelector('.grid-card__image');
 

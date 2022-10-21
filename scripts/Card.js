@@ -7,7 +7,7 @@ export default class Card {
     }
 
     _getTemplate() {
-        const cardElement = this._cardTemplate.content.querySelector('.grid-card').cloneNode(true);
+        const cardElement = document.querySelector(this._cardTemplate).content.querySelector('.grid-card').cloneNode(true);
         this._gridCardTitle = cardElement.querySelector('.grid-card__title');
         this._gridCardImage = cardElement.querySelector('.grid-card__image');
 

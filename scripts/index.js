@@ -91,7 +91,7 @@ function handleCardClick(name, link) {
 }
 
 function createCard(item) {
-    const card = new Card(item, cardTemplate, handleCardClick);
+    const card = new Card(item, '#grid-card-template', handleCardClick);
     return card.createCard();
 }
 
@@ -122,8 +122,7 @@ popupCard.addEventListener('submit', (evt) => {
         link: linkCard.value
     }
 
-    const card = new Card(item, cardTemplate, handleCardClick);
-    const cardElement = card.createCard();
+    const cardElement = createCard(item);
 
     renderCard(cardElement);
 

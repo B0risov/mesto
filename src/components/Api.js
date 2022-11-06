@@ -13,9 +13,7 @@ export default class Api {
             headers: this._headers,
         })
             .then((res) => this._getResponseData(res))
-            .catch((err) => {
-                console.log(err);
-            });
+           
     }
 
     _post(link, model) {
@@ -25,9 +23,7 @@ export default class Api {
             body: JSON.stringify(model)
         })
             .then((res) => this._getResponseData(res))
-            .catch((err) => {
-                console.log(err);
-            });
+
     }
 
     _patch(link, model) {
@@ -37,9 +33,7 @@ export default class Api {
             body: JSON.stringify(model)
         })
             .then((res) => this._getResponseData(res))
-            .catch((err) => {
-                console.log(err);
-            });
+
     }
 
     _put(link) {
@@ -48,9 +42,7 @@ export default class Api {
             headers: this._headers,
         })
             .then((res) => this._getResponseData(res))
-            .catch((err) => {
-                console.log(err);
-            });
+
     }
 
     _delete(link) {
@@ -59,9 +51,7 @@ export default class Api {
             headers: this._headers,
         })
             .then((res) => this._getResponseData(res))
-            .catch((err) => {
-                console.log(err);
-            });
+
     }
 
     _getResponseData(res) {
